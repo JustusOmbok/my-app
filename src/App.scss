@@ -1,0 +1,73 @@
+@import '~@skyscanner/backpack-web/bpk-mixins';
+
+// Define variables if needed
+$bpk-spacing-lg: 16px;
+$bpk-spacing-xl: 24px;
+$bpk-spacing-xxl: 32px;
+$bpk-spacing-base: 20px;
+$bpk-spacing-sm: 8px;
+$bpk-color-sky-blue: #00aaff;
+$bpk-primary-gradient: linear-gradient(45deg, #00aaff, #00d0ff);
+$bpk-color-white: #ffffff;
+
+// Define mixins if needed
+@mixin bpk-box-shadow-sm {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@mixin bpk-breakpoint-mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin container {
+  max-width: 1200px; // Adjust as needed
+  margin: 0 auto;
+}
+
+.App {
+  text-align: center;
+
+  &__header {
+    padding: $bpk-spacing-lg * 2;
+    background-color: $bpk-color-sky-blue;
+    background-image: $bpk-primary-gradient;
+    color: $bpk-color-white;
+
+    @include bpk-box-shadow-sm;
+
+    @include bpk-breakpoint-mobile {
+      padding: $bpk-spacing-xl;
+    }
+  }
+
+  &__header-inner {
+    @include container;
+  }
+
+  &__main {
+    padding: $bpk-spacing-xxl;
+
+    @include container;
+
+    @include bpk-breakpoint-mobile {
+      padding: $bpk-spacing-base;
+    }
+  }
+
+  &__heading {
+    margin-bottom: $bpk-spacing-sm;
+  }
+
+  &__text {
+    margin-bottom: $bpk-spacing-sm;
+  }
+
+  // Add styles for the calendar
+  #calendar {
+    margin-top: $bpk-spacing-lg;
+  }
+
+  // Add any additional styling if needed
+}
