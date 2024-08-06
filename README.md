@@ -5,7 +5,7 @@
 > so please refer to [it's documentation](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md)
 > for more usage information.
 
-# [_m-app_]
+# [_my-app_]
 
 [_A flight Schedule calender._]
 
